@@ -12,6 +12,9 @@
 TAP_NAME := bigbang/tools-public
 FORMULA_NAME := bbctl
 
+LINUX_DOCKER_PLATFORM := linux/amd64
+LINUX_DOCKER_IMAGE := linuxbrew/test:dev
+
 .PHONY: default help brew brew-uninstall brew-install brew-lint brew-test
 
 default: help
@@ -38,3 +41,9 @@ brew-test:
 lint:
 	markdownlint --disable=MD013 ./**/*md
 	git ls-files | grep -E "(Makefile|\.sh)" | xargs -n1 shellcheck
+
+linuxbrew-test:
+	docker build --platform="$(LINUX_DOCKER_PLATFORM)" . -t "$(LINUX_DOCKER_IMAGE)"
+
+linuxbrew-shell: linuxbrew-test
+	docker run --platform="$(LINUX_DOCKER_PLATFORM)" --entrypoint=/bin/bash -ti "$(LINUX_DOCKER_IMAGE)"
