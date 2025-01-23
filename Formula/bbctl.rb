@@ -4,11 +4,11 @@
 # homebrew formula HOWTO: https://rubydoc.brew.sh/Formula.html
 class Bbctl < Formula
   desc "Simplifies development, operations, and maintenance of Big Bang"
-  homepage "https://repo1.dso.mil/big-bang/product/packages/bbctl"
-  url "https://repo1.dso.mil/big-bang/product/packages/bbctl/-/archive/0.7.6/bbctl-0.7.6.tar.gz"
+  homepage "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl"
+  url "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl/-/archive/0.7.6/bbctl-0.7.6.tar.gz"
   sha256 "39bf0a596202ffb27723699ab38a7cdf7646265da2674d50242c74d950b64649"
   license "Apache-2.0"
-  head "https://repo1.dso.mil/big-bang/product/packages/bbctl.git", branch: "main"
+  head "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl.git", branch: "main"
 
   # TODO: prebuilt binaries can be downloaded directly if we can set them up
   # See: https://docs.brew.sh/Bottles
