@@ -20,12 +20,17 @@ class Bbctl < Formula
   def install
     # CGO is not needed by bbctl and was causing issues on some linuxbrew installs
     ENV["CGO_ENABLED"] = "0"
-    build_date = Time.now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    # This formula hardcodes buildDate to match the actual released_at date of
+    # the bbctl tag it's building against so we can still trust it as a proxy
+    # for 'How out of date is your local bbctl binary?'
+    build_date_key = "repo1.dso.mil/big-bang/apps/developer-tools/bbctl/static.buildDate"
+    build_date_val = "2025-01-22 15:50:38.633 +0000 UTC"
 
     # To see available flags and descriptions: `go build -ldflags="-help" ./main.go`
     # -s is disable symbol table
     # -w is disable DWARF generation
-    system "go", "build", *std_go_args(ldflags: "-s -w -X static.buildDate=#{build_date}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X '#{build_date_key}=#{build_date_val}'")
 
     #######
     # Primary TODO:
