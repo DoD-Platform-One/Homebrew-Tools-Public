@@ -1,5 +1,5 @@
 # using IB's ubuntu 20.04 image as a proxy for "this broke on WSL 20.04 once"
-FROM registry1.dso.mil/ironbank/canonical/ubuntu-pro-stig:20.04_stable AS base
+FROM registry1.dso.mil/ironbank/canonical/ubuntu-pro-stig:20.04 AS base
 
 RUN apt-get update && \
     apt-get install build-essential jq curl file git ruby-full locales vim-tiny --no-install-recommends -y && \
