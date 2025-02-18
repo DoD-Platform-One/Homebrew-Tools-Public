@@ -1,9 +1,15 @@
 # using IB's ubuntu 20.04 image as a proxy for "this broke on WSL 20.04 once"
 FROM registry1.dso.mil/ironbank/canonical/ubuntu-pro-stig:20.04 AS base
 
-RUN apt-get update && \
-    apt-get install build-essential jq curl file git ruby-full locales vim-tiny --no-install-recommends -y && \
-    rm -rf /var/lib/apt/lists/*
+# apt get install but it's headless and quiet-ish
+# for when we run this by hand via `make linuxbrew-test`
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get -qq update \
+    && apt-get -y -qq install \
+      -o=Dpkg::Use-Pty=0 \
+      --no-install-recommends \
+      build-essential jq curl file git ruby-full locales vim-tiny \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN localedef -i en_US -f UTF-8 en_US.UTF-8
 
