@@ -43,7 +43,7 @@ lint:
 	git ls-files | grep -E "(Makefile|\.sh)" | xargs -n1 shellcheck
 
 linuxbrew-test:
-	docker build --platform="$(LINUX_DOCKER_PLATFORM)" . -t "$(LINUX_DOCKER_IMAGE)"
+	docker build --no-cache=true --progress=plain --platform="$(LINUX_DOCKER_PLATFORM)" . -t "$(LINUX_DOCKER_IMAGE)"
 
 linuxbrew-shell: linuxbrew-test
 	docker run --platform="$(LINUX_DOCKER_PLATFORM)" --entrypoint=/bin/bash -ti "$(LINUX_DOCKER_IMAGE)"
