@@ -5,8 +5,8 @@
 class Bbctl < Formula
   desc "Simplifies development, operations, and maintenance of Big Bang"
   homepage "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl"
-  url "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl/-/archive/0.8.0/bbctl-0.8.0.tar.gz"
-  sha256 "bd49829e549e1c5f43ad26aac2406bfe740f899bf533561b71b65e43070be7dc"
+  url "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl/-/archive/1.0.0/bbctl-1.0.0.tar.gz"
+  sha256 "ce5eba85dcfab8cf31aa27e682c66964f5d5c7a9f64c8adf11ed54e6e3822962"
   license "Apache-2.0"
   head "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl.git", branch: "main"
 
@@ -25,7 +25,7 @@ class Bbctl < Formula
     # the bbctl tag it's building against so we can still trust it as a proxy
     # for 'How out of date is your local bbctl binary?'
     build_date_key = "repo1.dso.mil/big-bang/apps/developer-tools/bbctl/static.buildDate"
-    build_date_val = "2025-02-14 22:06:37.696 +0000 UTC"
+    build_date_val = "2025-02-28 22:40:52.792 +0000 UTC"
 
     # To see available flags and descriptions: `go build -ldflags="-help" ./main.go`
     # -s is disable symbol table
