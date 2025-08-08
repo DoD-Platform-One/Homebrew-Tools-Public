@@ -1,4 +1,8 @@
+.idea
 *.md
 ci
 Makefile
 LICENSE
+
+# .git folder contents are needed for some homebrew operations, so don't ignore it
+!.git

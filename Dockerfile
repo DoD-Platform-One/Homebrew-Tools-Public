@@ -1,5 +1,5 @@
-# using IB's ubuntu 20.04 image as a proxy for "this broke on WSL 20.04 once"
-FROM registry1.dso.mil/ironbank/canonical/ubuntu-pro-stig:20.04 AS base
+# using IB's ubuntu image as a proxy for "this broke on WSL 20.04 once"
+FROM registry1.dso.mil/ironbank/canonical/ubuntu-pro-stig:22.04 AS base
 
 # apt get install but it's headless and quiet-ish
 # for when we run this by hand via `make linuxbrew-test`
@@ -30,6 +30,8 @@ RUN brew install go
 
 # add your local checkout of this repo (homebrew-tools-public) as a tap
 WORKDIR /home/linuxbrew
+
+FROM base as tester
 ADD . ./homebrew-tools-public
 
 # trust this local git repo so linuxbrew will do its thing
@@ -38,4 +40,3 @@ RUN git config --global --add safe.directory /home/linuxbrew/homebrew-tools-publ
 # enter our docker clone of this repo, add the tap, install each formula
 WORKDIR /home/linuxbrew/homebrew-tools-public
 RUN brew tap bigbang/tools-public .
-RUN ./scripts/install-and-test-each-formula.sh
