@@ -4,9 +4,9 @@ set -euo pipefail
 
 set -x
 
-formulae=$(brew tap-info bigbang/tools-public --json | jq --raw-output '.[].formula_names[]')
+formulae=$(brew tap-info bigbang/tools-public --json | jq --raw-output '.[].formula_names[]' | shuf)
 
 for formula in $formulae; do
-  brew install "$formula"
-  brew test --verbose --debug "$formula"
+  brew install  --verbose --debug "$formula"
+  brew test     --verbose --debug "$formula"
 done
