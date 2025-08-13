@@ -9,7 +9,7 @@ class LogInTool < Formula
       revision: "bb9c3a41ee82c0d55160ba20e16c8068be820a04"
 
   license "Apache-2.0"
-  head "https://repo1.dso.mil/big-bang/team/tools/cyber/log-in-tool.git", branch: "main"
+  head "https://repo1.dso.mil/big-bang/apps/developer-tools/log-in-tool.git", branch: "main"
 
   depends_on "go" => :build
 
