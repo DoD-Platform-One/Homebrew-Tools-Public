@@ -1,9 +1,9 @@
 # This tool establishes a secure network tunnel to an AWS EKS cluster by leveraging AWS Systems Manager (SSM), a bastion instance, and sshuttle. It simplifies connecting to private endpoints inside a VPC without requiring VPN infrastructure or direct SSH access.
 class LogInTool < Formula
   desc "EKS Bastion Tunnel Tool using AWS SSM"
-  homepage "https://repo1.dso.mil/big-bang/team/tools/cyber/log-in-tool"
+  homepage "https://repo1.dso.mil/big-bang/apps/developer-tools/log-in-tool"
 
-  url "https://repo1.dso.mil/big-bang/team/tools/cyber/log-in-tool",
+  url "https://repo1.dso.mil/big-bang/apps/developer-tools/log-in-tool",
       using:    :git,
       tag:      "v0.1.7",
       revision: "bb9c3a41ee82c0d55160ba20e16c8068be820a04"
