@@ -15,13 +15,17 @@ First, install homebrew on your Mac or Linux machine by following their [officia
 Add this repository as a homebrew tap:
 
 ```console
-> brew tap bigbang/tools-public https://repo1.dso.mil/big-bang/homebrew-tools-public.git
+> brew tap bigbang/tools-public https://repo1.dso.mil/big-bang/apps/developer-tools/homebrew-tools-public.git
 
-brew tap bigbang/tools-public .
 ==> Tapping bigbang/tools-public
 Cloning into '/opt/homebrew/Library/Taps/bigbang/homebrew-tools-public'...
-done.
-Tapped 1 formula (31 files, 23.5KB).
+remote: Enumerating objects: 168, done.
+remote: Counting objects: 100% (33/33), done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 168 (delta 22), reused 13 (delta 13), pack-reused 135 (from 1)
+Receiving objects: 100% (168/168), 27.27 KiB | 9.09 MiB/s, done.
+Resolving deltas: 100% (65/65), done.
+Tapped 2 formulae (27 files, 48.5KB).
 ```
 
 ### 3. Finally, install `bbctl`
@@ -44,5 +48,5 @@ Install `bbctl` from our tap:
 
 ## References
 
-- [`bbctl` home](https://repo1.dso.mil/big-bang/product/packages/bbctl)
+- [`bbctl` home](https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl)
 - [`brew` home](https://brew.sh/)
