@@ -5,8 +5,8 @@ class LogInTool < Formula
 
   url "https://repo1.dso.mil/big-bang/apps/developer-tools/log-in-tool",
       using:    :git,
-      tag:      "v0.1.7",
-      revision: "bb9c3a41ee82c0d55160ba20e16c8068be820a04"
+      tag:      "v0.1.8",
+      revision: "adbe6ca76eec0a02fe14b6f74eee5cb749c2ad3c"
 
   license "Apache-2.0"
   head "https://repo1.dso.mil/big-bang/apps/developer-tools/log-in-tool.git", branch: "main"
@@ -20,7 +20,7 @@ class LogInTool < Formula
     # To see available flags and descriptions: `go build -ldflags="-help" ./main.go`
     # -s is disable symbol table
     # -w is disable DWARF generation
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X 'main.version=0.1.8'")
   end
 
   test do
