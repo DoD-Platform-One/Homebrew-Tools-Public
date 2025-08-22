@@ -49,4 +49,5 @@ Install `bbctl` from our tap:
 ## References
 
 - [`bbctl` home](https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl)
+- [`log-in-tool` home](https://repo1.dso.mil/big-bang/apps/developer-tools/log-in-tool)
 - [`brew` home](https://brew.sh/)
