@@ -27,10 +27,13 @@ class Bbctl < Formula
     build_date_key = "repo1.dso.mil/big-bang/apps/developer-tools/bbctl/static.buildDate"
     build_date_val = "2026-01-22 21:22:35.896 +0000 UTC"
 
+    build_version_key = "repo1.dso.mil/big-bang/apps/developer-tools/bbctl/util/version.AppVersion"
+    build_version_val = "v2.3.0"
+
     # To see available flags and descriptions: `go build -ldflags="-help" ./main.go`
     # -s is disable symbol table
     # -w is disable DWARF generation
-    system "go", "build", *std_go_args(ldflags: "-s -w -X '#{build_date_key}=#{build_date_val}'")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X '#{build_date_key}=#{build_date_val}' -X '#{build_version_key}=#{build_version_val}'")
 
     #######
     # Primary TODO:
