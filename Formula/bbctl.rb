@@ -5,8 +5,8 @@
 class Bbctl < Formula
   desc "Simplifies development, operations, and maintenance of Big Bang"
   homepage "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl"
-  url "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl/-/archive/v2.3.0/bbctl-v2.3.0.tar.gz"
-  sha256 "8810bfabd769624a41e6c5c59b24a2e269f83990ebaf399aacb44f19a7230e79"
+  url "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl/-/archive/v2.3.1/bbctl-v2.3.1.tar.gz"
+  sha256 "5ea80adeadc4defb04f4883ca76b77c3fa89c8ebd8c37be52c9270f74dddf87f"
   license "Apache-2.0"
   head "https://repo1.dso.mil/big-bang/apps/developer-tools/bbctl.git", branch: "main"
 
@@ -24,11 +24,11 @@ class Bbctl < Formula
     # This formula hardcodes buildDate to match the actual released_at date of
     # the bbctl tag it's building against so we can still trust it as a proxy
     # for 'How out of date is your local bbctl binary?'
-    build_date_key = "repo1.dso.mil/big-bang/apps/developer-tools/bbctl/static.buildDate"
-    build_date_val = "2026-01-22 21:22:35.896 +0000 UTC"
+    build_date_key = "repo1.dso.mil/big-bang/apps/developer-tools/bbctl/v2/static.buildDate"
+    build_date_val = "2026-01-26 22:26:34.565 +0000 UTC"
 
-    build_version_key = "repo1.dso.mil/big-bang/apps/developer-tools/bbctl/util/version.AppVersion"
-    build_version_val = "v2.3.0"
+    build_version_key = "repo1.dso.mil/big-bang/apps/developer-tools/bbctl/v2/util/version.AppVersion"
+    build_version_val = "v2.3.1"
 
     # To see available flags and descriptions: `go build -ldflags="-help" ./main.go`
     # -s is disable symbol table
